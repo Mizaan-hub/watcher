@@ -1,13 +1,9 @@
 import React from 'react'
 
-const page = () => {
+const Page = () => {
   return (
-    <div>
-      <h1 className='text-2xl underline'>
-        Welcome and I am the Watcher
-      </h1>
-    </div>
+    <div>Page</div>
   )
 }
 
-export default page
+export default Page
