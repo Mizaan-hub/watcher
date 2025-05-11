@@ -5,10 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import DropdownList from "./DropdownList";
-import { useToggle } from "./ToggleContext";
 
 const Header = ({ subHeader, title, userImg }: SharedHeaderProps) => {
-  const { isToggled } = useToggle();
   return (
     <header className="header">
       <section className="header-container">
@@ -36,7 +34,6 @@ const Header = ({ subHeader, title, userImg }: SharedHeaderProps) => {
               alt="upload"
               width={16}
               height={16}
-              className={isToggled ? "invert" : ""}
             />
             <span>Upload a video</span>
             <div className="record">

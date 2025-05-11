@@ -2,10 +2,8 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import { useToggle } from "./ToggleContext";
 
 const DropdownList = () => {
-  const { isToggled } = useToggle();
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="relative">
@@ -17,7 +15,6 @@ const DropdownList = () => {
               alt="menu"
               width={14}
               height={14}
-              className={isToggled ? "invert" : ""}
             />
             Most Recent
           </figure>
@@ -26,10 +23,19 @@ const DropdownList = () => {
             alt="arrow down"
             width={20}
             height={20}
-            className={isToggled ? "invert" : ""}
           />
         </div>
       </div>
+
+      {isOpen &&(
+        <ul className="dropdown">
+          {['Most Recent', 'Most Liked'].map((option)=>(
+            <li key={option} className="list-item">
+              {option}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
