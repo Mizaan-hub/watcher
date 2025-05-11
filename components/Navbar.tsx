@@ -1,14 +1,16 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useToggle } from "./ToggleContext";
 
 const user = {};
 
 const Navbar = () => {
-  const router = useRouter()
+  const { isToggled, toggle } = useToggle();
+  const router = useRouter();
   return (
     <header className="navbar">
       <nav>
@@ -22,9 +24,18 @@ const Navbar = () => {
           <h1>Watcher</h1>
         </Link>
 
+        <button
+          onClick={toggle}
+          className={`flex items-center gap-2 px-4 py-2 rounded-full transition-colors duration-300
+    ${isToggled ? "bg-gray-800 text-white" : "bg-yellow-50 text-yellow-900"}
+  `}
+        >
+          <span>{isToggled ? "🌙" : "☀️"}</span>
+        </button>
+
         {user && (
           <figure>
-            <button onClick={() => router.push('/profile/123')}>
+            <button onClick={() => router.push("/profile/123")}>
               <Image
                 src="/hall/ana/ana-7.png"
                 alt="pfp"

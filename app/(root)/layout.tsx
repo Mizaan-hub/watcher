@@ -1,13 +1,13 @@
-import Navbar from "@/components/Navbar"
-import { ReactNode } from "react"
+import Navbar from "@/components/Navbar";
+import { ReactNode } from "react";
 
-const layout = ({ children }: {children: ReactNode}) => {
+const layout = ({ children }: { children: ReactNode }) => {
   return (
     <div>
-      <Navbar />
-      {children}
+        <Navbar />
+        {children}
     </div>
-  )
-}
+  );
+};
 
-export default layout
+export default layout;
