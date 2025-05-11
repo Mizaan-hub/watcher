@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Mohammed-Aymaan-s-workspace-39c51c.us-east-1.xata.sh/db/Watcher",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
